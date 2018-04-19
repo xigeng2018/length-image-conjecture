@@ -1,0 +1,496 @@
+%% LyX 2.2.2 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[12pt,english]{article}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage{geometry}
+\geometry{verbose,lmargin=3.5cm,rmargin=3.5cm}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+
+\makeatletter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+\numberwithin{equation}{section}
+  \theoremstyle{definition}
+  \newtheorem{defn}{\protect\definitionname}[section]
+  \theoremstyle{plain}
+  \newtheorem{prop}{\protect\propositionname}[section]
+  \theoremstyle{plain}
+  \newtheorem{conjecture}{\protect\conjecturename}[section]
+  \theoremstyle{plain}
+  \newtheorem{lem}{\protect\lemmaname}[section]
+  \theoremstyle{remark}
+  \newtheorem{rem}{\protect\remarkname}[section]
+  \theoremstyle{plain}
+  \newtheorem{thm}{\protect\theoremname}[section]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+\date{}
+
+\makeatother
+
+\usepackage{babel}
+  \providecommand{\conjecturename}{Conjecture}
+  \providecommand{\definitionname}{Definition}
+  \providecommand{\lemmaname}{Lemma}
+  \providecommand{\propositionname}{Proposition}
+  \providecommand{\remarkname}{Remark}
+\providecommand{\theoremname}{Theorem}
+
+\begin{document}
+
+\title{The Length/Image Conjecture for Signatures}
+\maketitle
+
+\section{The length conjecture for pure rough paths}
+
+\subsection{A general upper estimate for pure rough paths}
+
+Let $V$ be a Banach space and let $V^{\otimes n}$ be the induced
+projective tensor products. Let $G^{(n)}(V)$ (respectively, $\mathfrak{g}^{(n)}(V)$)
+be the degree $n$ free nilpotent Lie group (respectively, free nilpotent
+Lie algebra) over $V$. Define $\mathcal{L}_{n}(V)$ to be the space
+of degree $n$ homogeneous Lie polynomials over $V,$ so that 
+\[
+\mathfrak{g}^{(n)}(V)=\bigoplus_{k=1}^{n}\mathcal{L}_{k}(V).
+\]
+
+\begin{defn}
+A \textit{pure $n$-rough path} is the weakly geometric $n$-rough
+path of the form 
+\[
+\mathbf{X}_{t}=\exp\left(tl\right),
+\]
+where $l\in\mathfrak{g}^{(n)}(V)$, and the $n$-th homogeneous component
+of $l$ is nonzero. Here the exponential is taken in the degree $n$
+tensor algebra $T^{(n)}(V).$
+\end{defn}
+%
+\begin{prop}
+Let $\mathbf{X}_{t}=\exp(tl)$ ($0\leqslant t\leqslant1$) be a pure
+$n$-rough path. Then the signature of $\mathbf{X}_{t}$ is 
+\[
+S(\mathbf{X})=\exp(l),
+\]
+where the expoenential is taken in the full tensor algebra $T((V))$.
+\end{prop}
+%
+\begin{defn}
+Let $\mathbf{X}_{t}$ be a $p$-rough path. We use $\mathbb{X}_{s,t}^{n}$
+to denote the degree $n$ signature of $\mathbf{X}$ over $[s,t].$
+Define the ``lim-sup'' functional 
+\[
+\widetilde{L}_{p}(\mathbf{X})\triangleq\overline{\lim_{n\rightarrow\infty}}\left((n/p)!\|\mathbf{\mathbb{X}}_{0,1}^{n}\|\right)^{p/n}.
+\]
+\end{defn}
+%
+\begin{conjecture}
+\label{conj: length conjecture for pure rough path}Let $\mathbf{X}_{t}=\exp(tl)$
+be a pure $m$-rough path, so that $l\in\mathfrak{g}^{(m)}(V).$ Let
+$l_{m}\neq0$ be the $m$-th homogeneous component of $l$. Then 
+\[
+\|l_{m}\|_{V^{\otimes m}}=\widetilde{L}_{m}(\mathbf{X}).
+\]
+\end{conjecture}
+%
+We already know that the upper bound is true. Namely, we have the
+following result.
+\begin{prop}
+\label{prop: upper bound}Using the same notation as before, we have
+\[
+\widetilde{L}_{m}(\mathbf{X})\leqslant\|l_{m}\|_{V^{\otimes m}}.
+\]
+\end{prop}
+%
+Using another notation, this upper bound can be written as: 
+\begin{prop}
+Let $\Vert\cdot\Vert_{n}$ be a cross-norm. Let $\mathcal{P}_{i}$
+be order $i$ Lie polynomial (i.e. an element of $\mathcal{L}_{i}$).
+Then 
+\[
+\limsup_{k}\Vert(\frac{k}{M})!\pi_{k}(\exp(\sum_{i=1}^{M}\mathcal{P}_{i}))\Vert_{k}^{\frac{M}{k}}\leq\Vert\mathcal{P}_{M}\Vert_{M}
+\]
+\end{prop}
+To prove this, we first need a lemma. 
+\begin{lem}
+\label{lem:Binomial concentration}Let $0<\alpha<\beta\leq1$ and
+let $a,b>0$. Then 
+\[
+\limsup_{k}\big((k\alpha)!\sum_{j=0}^{k}\frac{a^{j\alpha}b^{(k-j)\alpha}}{(j\beta)!((k-j)\alpha)!}\big)^{\frac{1}{k\alpha}}\leq b.
+\]
+\end{lem}
+\begin{proof}
+Let $\varepsilon>0$. It follows from Stirling's approximation that
+for $0<\gamma\leq1$, 
+\[
+(j\gamma)!\sim(\frac{j\gamma}{e})^{j\gamma}\sqrt{2\pi j\gamma},
+\]
+and that $\beta>\alpha$, that there exists $J$ such that for all
+$j\geq J$, 
+\[
+\frac{(j\alpha)!}{(j\beta)!}<\varepsilon^{j}.
+\]
+Therefore, 
+\begin{eqnarray*}
+ &  & \sum_{j=0}^{k}\frac{a^{j\alpha}b^{(k-j)\alpha}}{(j\beta)!((k-j)\alpha)!}\\
+ & \leq & \sum_{j=0}^{J-1}\frac{a^{j\alpha}b^{(k-j)\alpha}}{(j\beta)!((k-j)\alpha)!}+\sum_{j=J}^{k}\frac{(\varepsilon^{1/\alpha}a)^{j\alpha}b^{(k-j)\alpha}}{(j\alpha)!((k-j)\alpha)!}.
+\end{eqnarray*}
+We may apply the neoclassical inequality to conclude that 
+\begin{eqnarray}
+ &  & \sum_{j=0}^{k}\frac{a^{j\alpha}b^{(k-j)\alpha}}{(j\beta)!((k-j)\alpha)!}\nonumber \\
+ & \leq & \sum_{j=0}^{J-1}\frac{a^{j\alpha}b^{(k-j)\alpha}}{(j\beta)!((k-j)\alpha)!}+\frac{(\varepsilon^{1/\alpha}a+b)^{k\alpha}}{\alpha(k\alpha)!}.\label{eq:post neoclassical}
+\end{eqnarray}
+We observe that 
+\[
+(k\alpha)!\sum_{j=0}^{J-1}\frac{a^{j\alpha}b^{(k-j)\alpha}}{(j\beta)!((k-j)\alpha)!}\leq\begin{cases}
+\frac{(k\alpha)!J(a\vee1)^{J\alpha}b^{(k-J)\alpha}}{((k-j)\alpha)!}, & \mbox{if }b\leq1;\\
+\frac{(k\alpha)!J(a\vee1)^{J\alpha}b^{k\alpha}}{((k-j)\alpha)!}, & \mbox{if }b>1.
+\end{cases}
+\]
+Noting that once again by Stirling's approximation, 
+\[
+\frac{(k\alpha)!}{((k-j)\alpha)!}\leq Ck^{J\alpha}
+\]
+where $C$ is a constant depending only on $j$ and $\alpha$. Then
+\[
+(k\alpha)!\sum_{j=0}^{J-1}\frac{a^{j\alpha}b^{(k-j)\alpha}}{(j\beta)!((k-j)\alpha)!}\leq\tilde{C}k^{J\alpha}b^{k\alpha}
+\]
+where $\tilde{C}$ depends on $J,a$ and $\alpha$. Therefore, 
+\[
+(k\alpha)!\sum_{j=0}^{k}\frac{a^{j\alpha}b^{(k-j)\alpha}}{(j\beta)!((k-j)\alpha)!}\leq\tilde{C}k^{J\alpha}b^{k\alpha}+\frac{(\varepsilon^{1/\alpha}a+b)^{k\alpha}}{\alpha}.
+\]
+We then take limsup in $k$ to obtain,
+\begin{eqnarray*}
+ &  & \limsup_{k}\big[(k\alpha)!\sum_{j=0}^{k}\frac{a^{j\alpha}b^{(k-j)\alpha}}{(j\beta)!((k-j)\alpha)!}\big]^{\frac{1}{k\alpha}}\\
+ & \leq & \limsup_{k}\big[\tilde{C}k^{J\alpha}b^{k\alpha}+\frac{(\varepsilon^{1/\alpha}a+b)^{k\alpha}}{\alpha}\big]^{\frac{1}{k\alpha}}\\
+ & = & \varepsilon^{1/\alpha}a+b.
+\end{eqnarray*}
+We then let $\varepsilon\rightarrow0$ to obtain 
+\[
+\limsup_{k}\big[(k\alpha)!\sum_{j=0}^{k}\frac{a^{j\alpha}b^{(k-j)\alpha}}{(j\beta)!((k-j)\alpha)!}\big]^{\frac{1}{k\alpha}}\leq b.
+\]
+\end{proof}
+We now prove our main proposition. 
+\begin{proof}
+Note that 
+\begin{eqnarray*}
+ &  & \Vert\pi_{k}(\exp(\sum_{i=1}^{M}\mathcal{P}_{i}))\Vert\\
+ & \leq & \sum_{N=0}^{\infty}\Vert\pi_{k}\big(\frac{(\sum_{i=1}^{M}\mathcal{P}_{i})^{\otimes N}}{N!}\big)\Vert\\
+ & \leq & \sum_{N=0}^{\infty}\sum_{i_{1}+\ldots+i_{N}=k}\frac{\Vert\mathcal{P}_{i_{1}}\Vert\ldots\Vert\mathcal{P}_{i_{N}}\Vert}{N!}\\
+ & = & \sum_{\sum in_{i}=k}\frac{\Vert\mathcal{P}_{1}\Vert^{n_{1}}\ldots\Vert\mathcal{P}_{M}\Vert^{n_{M}}}{(n_{1})!\ldots(n_{M})!}.
+\end{eqnarray*}
+If we substitute $\tilde{n}_{i}=in_{i}$, we have 
+\begin{eqnarray}
+ &  & \sum_{\sum in_{i}=k}\frac{\Vert\mathcal{P}_{1}\Vert^{n_{1}}\ldots\Vert\mathcal{P}_{M}\Vert^{n_{M}}}{(n_{1})!\ldots(n_{M})!}\nonumber \\
+ & \leq & \sum_{\sum\tilde{n}_{i}=k}\frac{\Vert\mathcal{P}_{1}\Vert^{\tilde{n}_{1}}\ldots\Vert\mathcal{P}_{M}\Vert^{\tilde{n}_{M}/M}}{(\tilde{n}_{1})!\ldots(\tilde{n}_{M}/M)!}.\label{eq:First part}
+\end{eqnarray}
+Note first that we may use neoclassical inequality (the multi-factor
+version, see Lemma 1 in \cite{FR11}) to bound 
+\begin{eqnarray*}
+ &  & \sum_{\sum_{i=1}^{M-1}\tilde{n}_{i}=k-\tilde{n}_{M}}\frac{\Vert\mathcal{P}_{1}\Vert^{\tilde{n}_{1}}\ldots\Vert\mathcal{P}_{M-1}\Vert^{\tilde{n}_{M-1}/(M-1)}}{(\tilde{n}_{1})!\ldots(\tilde{n}_{M-1}/(M-1))!}\\
+ & \leq & \sum_{\sum_{i=1}^{M-1}\tilde{n}_{i}=k-\tilde{n}_{M}}\frac{\Vert\mathcal{P}_{1}\Vert^{\tilde{n}_{1}}\ldots\Vert\mathcal{P}_{M-1}\Vert^{\tilde{n}_{M-1}/(M-1)}}{(\tilde{n}_{1}/(M-1))!\ldots(\tilde{n}_{M-1}/(M-1))!}\\
+ & \leq & \frac{(M-1)^{M-1}(\sum_{i=0}^{M-1}\Vert\mathcal{P}_{i}\Vert^{(M-1)/i})^{(k-\tilde{n}_{M})/(M-1)}}{((k-\tilde{n}_{M})/(M-1))!}.
+\end{eqnarray*}
+We now let 
+\[
+a=(\sum_{i=0}^{M-1}\Vert\mathcal{P}_{i}\Vert^{(M-1)/i}\big)^{M/(M-1)}.
+\]
+Then by continuing the calculation from (\ref{eq:First part}), 
+\[
+\Vert\pi_{k}(\exp(\sum_{i=1}^{M}\mathcal{P}_{i}))\Vert\leq(M-1)^{M-1}\sum_{\tilde{n}_{M}=0}^{k}\frac{a^{(k-\tilde{n}_{M})/M}\Vert\mathcal{P}_{M}\Vert^{\tilde{n}_{M}/M}}{(\frac{k-\tilde{n}_{M}}{M-1})!(\frac{\tilde{n}_{M}}{M})!}.
+\]
+We now apply Lemma \ref{lem:Binomial concentration} to see that 
+\[
+\limsup_{k}\Vert(\frac{k}{M})!\pi_{k}(\exp(\sum_{i=1}^{M}\mathcal{P}_{i}))\Vert^{\frac{M}{k}}\leq\Vert\mathcal{P}_{M}\Vert.
+\]
+\end{proof}
+Therefore, the conjecture boils down to establishing the matching
+lower bound.
+
+\subsection{Algebraic development}
+
+Again let $V$ be a Banach space and let $V^{\otimes n}$ be the induced
+projective tensor products. Let $\mathfrak{h}$ be a fixed matrix
+algebra over $\mathbb{R}$ or $\mathbb{C}$ (i.e. a sub-algebra of
+$\mathfrak{gl}(k;\mathbb{R})$ or $\mathfrak{gl}(k;\mathbb{C})$ for
+some $k\geqslant1$). Let $H$ be the corresponding Lie group embedded
+as a subgroup of ${\rm GL}(k;\mathbb{R})$ or ${\rm GL}(k;\mathbb{C})$.
+We equip $\mathfrak{h}$ with a norm induced by some given matrix
+norm, whose precise choice is not so relevant at this point. Assume
+that $\Phi:V\rightarrow\mathfrak{h}$ is a bounded linear functional.
+Then for each $n\geqslant1,$ $\Phi$ induces a bounded linear functional
+$\Phi^{(n)}:V^{\otimes n}\rightarrow\mathfrak{h}$, such that 
+\[
+\Phi(v_{1}\otimes\cdots\otimes v_{n})=\Phi(v_{1})\cdots\Phi(v_{n}).
+\]
+Since $V^{\otimes n}$ is the projective tensor product, we know from
+\cite{LQ02}, Theorem 5.6.3 that
+\[
+\|\Phi^{(n)}\|_{{\rm op}}\leqslant\|\Phi\|_{{\rm op}}^{n}.
+\]
+In addition, $\Phi$ induces a homomorphism from the full tensor algebra
+$T((V))$ to $\mathfrak{h},$ which is defined by (still denoted as
+$\Phi$)
+\[
+\Phi\left(\sum_{n=0}^{\infty}\xi_{n}\right)\triangleq\sum_{n=0}^{\infty}\Phi^{(n)}(\xi_{n}),
+\]
+provided that the sum on the right hand side converges under the norm
+on $\mathfrak{h}.$
+\begin{defn}
+Let $\mathbf{X}_{t}$ be a geometric rough path over $V$. The solution
+to the differential equation 
+\[
+\begin{cases}
+d\Gamma_{t}=\Gamma_{t}\Phi(d\mathbf{X}_{t}),\\
+\Gamma_{0}=\mathrm{Id},
+\end{cases}
+\]
+is called the \textit{Cartan development} of $\mathbf{X}_{t}$ onto
+the Lie group $H$.
+\end{defn}
+%
+By Picard iteration, it is easily seen that 
+\begin{align*}
+\Gamma_{t} & =\sum_{n=0}^{\infty}\int_{0<t_{1}<\cdots<t_{n}<t}\Phi(d\mathbf{X}_{t_{1}})\cdots\Phi(d\mathbf{X}_{t_{n}})\\
+ & =\sum_{n=0}^{\infty}\Phi^{(n)}\left(\int_{0<t_{1}<\cdots<t_{n}<t}d\mathbf{X}_{t_{1}}\otimes\cdots\otimes d\mathbf{X}_{t_{n}}\right)\\
+ & =\Phi\left(S(\mathbf{X})_{0,t}\right),
+\end{align*}
+where $S(\mathbf{X})_{0,t}$ is the signature of $\mathbf{X}$ over
+$[0,t].$ Note that by the factorial decay of signature, $\Phi(S(\mathbf{X})_{0,t})\in\mathfrak{h}$
+is well defined. In particular, if $g\triangleq S(\mathbf{X})_{0,1}$
+is the signature of $\mathbf{X},$ then 
+\[
+\Gamma_{1}=\Phi(g).
+\]
+
+Now let $\mathbf{X}_{t}$ ($0\leqslant t\leqslant1$)be a weakly geometric
+$p$-rough path. For each $\lambda>0,$ define $\delta_{\lambda}$
+to be the dilation operator on the tensor algebra. Let $\Gamma_{t}^{\lambda}$
+be the Cartan development of the dilated path $\delta_{\lambda}(\mathbf{X}_{t})$
+onto $H$. Then 
+\[
+\Gamma_{t}^{\lambda}=\sum_{n=0}^{\infty}\lambda^{n}\int_{0<t_{1}<\cdots<t_{n}<t}\Phi(d\mathbf{X}_{t_{1}})\cdots\Phi(d\mathbf{X}_{t_{n}}).
+\]
+
+\begin{prop}
+\label{prop: intermediate lower bound}Suppose that $\|\Phi\|_{{\rm op}}\leqslant1$.
+Then we have 
+\[
+\overline{\lim_{\lambda\rightarrow\infty}}\frac{\log\|\Gamma_{1}^{\lambda}\|}{\lambda^{p}}\leqslant\widetilde{L}_{p}(\mathbf{X}).
+\]
+\end{prop}
+\begin{proof}
+The result can be proved in the same way as in \cite{BG18}, Proposition
+4.1, together with the observation that 
+\[
+\lambda\mapsto e^{-\lambda^{p}\widetilde{L}_{p}(\mathbf{X})}\cdot\sum_{n=0}^{\infty}\frac{\lambda^{n}\widetilde{L}_{p}(\mathbf{X})^{n/p}}{(n/p)!}
+\]
+has polynomial growth in $\lambda$. 
+\end{proof}
+
+\subsection{Degree two pure rough paths in two dimension}
+
+Consider $V=\mathbb{R}^{2},$ equipped with the $l^{1}$-norm with
+respect to the standard basis $\{{\rm e}_{1},{\rm e}_{2}\}$. Also
+equip the tensor products with the corresponding projective tensor
+norms. 
+\begin{lem}
+$\|[{\rm e}_{1},{\rm e}_{2}]\|=2$.
+\end{lem}
+\begin{proof}
+One simply observes that the projective tensor norms coincides with
+the $l^{1}$-norm with respect to the standard tensor basis if $V$
+is equipped with the $l^{1}$-norm.
+\end{proof}
+%
+Consider the following pure $2$-rough path 
+
+\[
+\mathbf{X}_{t}=\exp\left(t(a{\rm e}_{1}+b{\rm e}_{2}+c[{\rm e}_{1},{\rm e}_{2}])\right),\ \ \ 0\leqslant t\leqslant1,
+\]
+where $a,b,c\in\mathbb{R}^{1}$ with $c\neq0,$ and the exponential
+is taken in the degree two tensor algebra. Then the signature $g$
+of $\mathbf{X}$ is given by 
+\[
+g=\exp\left(a{\rm e}_{1}+b{\rm e}_{2}+c[{\rm e}_{1},{\rm e}_{2}]\right)\in T((V)),
+\]
+where now the exponential is taken in the full tensor algebra. 
+
+Now we choose the algebraic development in the following way. Let
+$\mathfrak{h}=\mathfrak{gl}(2;\mathbb{C}),$ and equip $\mathfrak{h}\cong L(\mathbb{C}^{2};\mathbb{C}^{2})$
+with the operator norm, where $\mathbb{C}^{2}$ is equipped with the
+norm 
+\[
+\left|\left(\begin{array}{c}
+z_{1}\\
+z_{2}
+\end{array}\right)\right|\triangleq|z_{1}|+|z_{2}|.
+\]
+ Define $\Phi:V\rightarrow\mathfrak{h}$ by 
+\[
+\Phi(x{\rm e}_{1}+y{\rm e}_{2})\triangleq\left(\begin{array}{cc}
+x & iy\\
+iy & -x
+\end{array}\right).
+\]
+
+\begin{lem}
+We have $\|\Phi\|_{{\rm op}}\leqslant1.$
+\end{lem}
+\begin{proof}
+For $v=x{\rm e}_{1}+y{\rm e}_{2}$ and $z=\left(\begin{array}{c}
+z_{1}\\
+z_{2}
+\end{array}\right)\in\mathbb{C}^{2},$ we have 
+\begin{align*}
+\Phi(x{\rm e}_{1}+y{\rm e}_{2})(z) & =\left(\begin{array}{cc}
+x & iy\\
+iy & -x
+\end{array}\right)\cdot\left(\begin{array}{c}
+z_{1}\\
+z_{2}
+\end{array}\right)=\left(\begin{array}{c}
+xz_{1}+iyz_{2}\\
+iyz_{1}-xz_{2}
+\end{array}\right).
+\end{align*}
+Therefore, 
+\begin{align*}
+ & \left|\Phi(x{\rm e}_{1}+y{\rm e}_{2})(z)\right|\\
+ & \leqslant|xz_{1}+iyz_{2}|+|iyz_{1}-xz_{2}|\\
+ & \leqslant|x|\cdot|z_{1}|+|y|\cdot|z_{2}|+|y|\cdot|z_{1}|+|x|\cdot|z_{2}|\\
+ & =(|x|+|y|)(|z_{1}|+|z_{2}|)\\
+ & =|v|\cdot|z|.
+\end{align*}
+This implies that $\|\Phi\|_{{\rm op}}\leqslant1.$
+\end{proof}
+%
+\begin{rem}
+I don't think $\|\Phi\|_{{\rm op}}\leqslant1$ if $V=\mathbb{R}^{2}$
+is equipped with the $l^{2}$-norm, no matter how we choose the norm
+on $\mathbb{C}^{2}.$
+\end{rem}
+%
+
+For each $\lambda>0$, let $\Gamma^{\lambda}$ be the Cartan development
+of $\delta_{\lambda}(\mathbf{X}).$ Note that the signature of $\delta_{\lambda}(\mathbf{X})$
+is 
+\[
+g^{\lambda}=\exp(\lambda a{\rm e}_{1}+\lambda b{\rm e}_{2}+\lambda^{2}c[{\rm e}_{1},{\rm e}_{2}]).
+\]
+It follows that 
+\[
+\Gamma_{1}^{\lambda}=\Phi(g^{\lambda})=\exp\left(\lambda aA+\lambda bB+\lambda^{2}c[A,B]\right),
+\]
+where 
+\[
+A\triangleq\Phi({\rm e}_{1})=\left(\begin{array}{cc}
+1 & 0\\
+0 & -1
+\end{array}\right),\ B\triangleq\Phi({\rm e}_{2})=\left(\begin{array}{cc}
+0 & i\\
+i & 0
+\end{array}\right).
+\]
+According to Proposition \ref{prop: upper bound} and Proposition
+\ref{prop: intermediate lower bound}, we know that 
+\[
+\overline{\lim_{\lambda\rightarrow\infty}}\frac{\log\|\Gamma_{1}^{\lambda}\|}{\lambda^{2}}\leqslant\|c[{\rm e}_{1},{\rm e}_{2}]\|=2|c|.
+\]
+
+To estimate $\|\Gamma_{1}^{\lambda}\|,$ first recall a standard result
+from functional analysis.
+\begin{prop}
+\label{prop: spectral bound}Let $T$ be a bounded linear operator
+over a complex Banach space $W.$ Then 
+\[
+|\mu|\leqslant\|T\|_{{\rm op}}
+\]
+for every $\mu$ in the spectrum of $T.$
+\end{prop}
+%
+Since $\|\Gamma_{1}^{\lambda}\|$ is the operator norm, Proposition
+\ref{prop: spectral bound} tells us that estimating $\|\Gamma_{1}^{\lambda}\|$
+boils down to eigenvalue estimates.
+
+Now let 
+\[
+M(\lambda)\triangleq\lambda aA+\lambda bB+\lambda^{2}c[A,B].
+\]
+By straight forward calculation, 
+\[
+M(\lambda)=\left(\begin{array}{cc}
+\lambda a & (\lambda b+2\lambda^{2}c)i\\
+(\lambda b-2\lambda^{2}c)i & -\lambda a
+\end{array}\right).
+\]
+It follows that the characteristic polynomial is 
+\begin{align*}
+{\rm ch}_{M(\lambda)}(t) & =\det(tI-M(\lambda))\\
+ & =t^{2}-(\lambda a)^{2}+(\lambda b)^{2}-(2\lambda^{2}c)^{2}.
+\end{align*}
+Therefore, when $\lambda$ is large, $M(\lambda)$ has two distinct
+real eigenvalues
+\[
+\pm\sqrt{4\lambda^{4}c^{2}+\lambda^{2}a^{2}-\lambda^{2}b^{2}}.
+\]
+In particular, $M(\lambda)$ is diagonalizable, and thus $\Gamma_{1}^{\lambda}=\exp(M(\lambda))$
+has two distinct real eigenvalues
+\[
+\exp\left(\pm\sqrt{4\lambda^{4}c^{2}+\lambda^{2}a^{2}-\lambda^{2}b^{2}}\right).
+\]
+By Proposition \ref{prop: spectral bound}, we conclude that 
+\[
+\|\Gamma_{1}^{\lambda}\|\geqslant\exp\left(\sqrt{4\lambda^{4}c^{2}+\lambda^{2}a^{2}-\lambda^{2}b^{2}}\right).
+\]
+Therefore, 
+\[
+\overline{\lim_{\lambda\rightarrow\infty}}\frac{\log\|\Gamma_{1}^{\lambda}\|}{\lambda^{2}}\geqslant\overline{\lim_{\lambda\rightarrow\infty}}\frac{\sqrt{4\lambda^{4}c^{2}+\lambda^{2}a^{2}-\lambda^{2}b^{2}}}{\lambda^{2}}=2|c|.
+\]
+ In particular, we obtain the following result.
+\begin{thm}
+Under the $l^{1}$-norm on $\mathbb{R}^{2}$ with the induce projective
+tensor norms, Conjecture \ref{conj: length conjecture for pure rough path}
+holds for $2$ dimensional pure $2$-rough paths.
+\end{thm}
+
+\section*{Thought about deterministic non-degeneracy property }
+
+In Malliavin calculus, to get existence of density, we need to be
+able to define the derivative on the path space. However, I think
+actually we DO NOT need a notion of differentiation. Some kind of
+injectiveness plus continuity may be enough. For example, in the one
+dimension case, we have the following lemma: 
+\begin{lem}
+Let $X:\Omega\rightarrow\mathbb{R}$ be a random variable which has
+a density. Let $g:\mathbb{R}\rightarrow\mathbb{R}$ be a continuous
+invertible function such that $g^{-1}$ is continuous. Then $g(X)$
+has a density. 
+\end{lem}
+\begin{proof}
+Let $F_{X}$ be the distribution function of $X$, i.e. $F_{X}(x)=\mathbb{P}(X\leq x)$.
+The existence of density is equivalent to $F_{X}$ being continuous
+(actually I need to check this, but intuitive this seems correct).
+As $g$ is injective, $g$ is either increasing or decreassing. Hence
+\[
+F_{g(X)}(x)=\mathbb{P}(g(X))\leq x)=\begin{cases}
+\mathbb{P}(X\leq g^{-1}(x))=F_{X}(g^{-1}(x)), & \text{if }g\text{ is increasing;}\\
+\mathbb{P}(X\geq g^{-1}(x))=1-F_{X}(g^{-1}(x)), & \text{if }g\text{ is decreasing.}
+\end{cases}
+\]
+Either way, $F_{g(X)}(x)$ is continuous, and hence $g(X)$ has a
+density. 
+
+(P.S. still need to check whether it is actually true that $X$ has
+a density iff $F_{X}$ is continuous. )
+\end{proof}
+\begin{thebibliography}{1}
+\bibitem{BG18}H. Boedihardjo and X. Geng, tail asymptotics of the
+Brownian signature, \textit{arXiv preprint}, 2018.
+
+\bibitem{LQ02}T. Lyons and Z. Qian, \textit{System control and rough
+path}s, Oxford University Press, 2002.
+\end{thebibliography}
+
+\end{document}
