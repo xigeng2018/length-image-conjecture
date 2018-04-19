@@ -455,36 +455,7 @@ tensor norms, Conjecture \ref{conj: length conjecture for pure rough path}
 holds for $2$ dimensional pure $2$-rough paths.
 \end{thm}
 
-\section*{Thought about deterministic non-degeneracy property }
 
-In Malliavin calculus, to get existence of density, we need to be
-able to define the derivative on the path space. However, I think
-actually we DO NOT need a notion of differentiation. Some kind of
-injectiveness plus continuity may be enough. For example, in the one
-dimension case, we have the following lemma: 
-\begin{lem}
-Let $X:\Omega\rightarrow\mathbb{R}$ be a random variable which has
-a density. Let $g:\mathbb{R}\rightarrow\mathbb{R}$ be a continuous
-invertible function such that $g^{-1}$ is continuous. Then $g(X)$
-has a density. 
-\end{lem}
-\begin{proof}
-Let $F_{X}$ be the distribution function of $X$, i.e. $F_{X}(x)=\mathbb{P}(X\leq x)$.
-The existence of density is equivalent to $F_{X}$ being continuous
-(actually I need to check this, but intuitive this seems correct).
-As $g$ is injective, $g$ is either increasing or decreassing. Hence
-\[
-F_{g(X)}(x)=\mathbb{P}(g(X))\leq x)=\begin{cases}
-\mathbb{P}(X\leq g^{-1}(x))=F_{X}(g^{-1}(x)), & \text{if }g\text{ is increasing;}\\
-\mathbb{P}(X\geq g^{-1}(x))=1-F_{X}(g^{-1}(x)), & \text{if }g\text{ is decreasing.}
-\end{cases}
-\]
-Either way, $F_{g(X)}(x)$ is continuous, and hence $g(X)$ has a
-density. 
-
-(P.S. still need to check whether it is actually true that $X$ has
-a density iff $F_{X}$ is continuous. )
-\end{proof}
 \begin{thebibliography}{1}
 \bibitem{BG18}H. Boedihardjo and X. Geng, tail asymptotics of the
 Brownian signature, \textit{arXiv preprint}, 2018.
